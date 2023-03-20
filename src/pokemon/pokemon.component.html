@@ -1,0 +1,17 @@
+<ng-container class="row" *ngFor="let pokemon of getPokemons()">
+  <div class="card col-lg-2 col-md-4 col-xs-12" style="width: 18rem">
+    <img
+      class="card-img-top"
+      src="{{ pokemon.getImage() }}"
+      alt="Pokemon Image"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ pokemon.getName() | titlecase }}</h5>
+      <div *ngFor="let type of pokemon.getTypes()">
+        <p class="card-text">{{ type | titlecase }}</p>
+      </div>
+      <div>Peso: {{ pokemon.getWeight() }} hg</div>
+      <div>Altura: {{ pokemon.getHeight() }} dm</div>
+    </div>
+  </div>
+</ng-container>
